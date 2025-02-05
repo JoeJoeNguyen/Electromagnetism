@@ -23,14 +23,14 @@ Left hand-side:
 		                                            B_x     & B_y     & B_z     \\
 		                                            C_x     & C_y     & C_z
 	                                            \end{vmatrix}                                                                \\ \\
-	                                        & = (B_y C_z - B_z C_y) \hat{x} + (B_x C_z - B_z C_x) \hat{y} + (B_x C_y - B_y C_x) \hat{z}    \\ \\
+	                                        & = (B_y C_z - B_z C_y) \hat{x} + (B_z C_x - B_x C_z ) \hat{y} + (B_x C_y - B_y C_x) \hat{z}    \\ \\
 	\vec{A} \times (\vec{B} \times \vec{C}) & =
 	\begin{vmatrix}
 		\hat{x}             & \hat{y}             & \hat{z}             \\
 		A_x                 & A_y                 & A_z                 \\
-		(B_y C_z - B_z C_y) & (B_x C_z - B_z C_x) & (B_x C_y - B_y C_x)
+		(B_y C_z - B_z C_y) & (B_z C_x - B_x C_z) & (B_x C_y - B_y C_x)
 	\end{vmatrix}                                                                        \\ \\
-	                                        & = [A_y(B_x C_y - B_y C_x) - A_z(B_x C_z - B_z C_x)] \hat{x} +                                \\
+	                                        & = [A_y(B_x C_y - B_y C_x) - A_z(B_z C_x - B_x C_z)] \hat{x} -                                \\
 	                                        & \quad [A_x(B_x C_y - B_y C_x) - A_z(B_y C_z - B_z C_y)] \hat{y} +                            \\
 	                                        & \quad [A_x(B_x C_z - B_z C_x) - A_y(B_y C_z - B_z C_y)] \hat{z}
 \end{align*}
@@ -51,7 +51,12 @@ Right hand-side:
 \end{align*}
 \begin{align*}
     \vec{B} (\vec{A} \cdot \vec{C}) - \vec{C} (\vec{A} \cdot \vec{B}) & = \underbrace{(B_x A_y C_y + B_x A_z C_z - C_x A_y B_y - C_x A_z B_z)}_{\text{x-component}}\hat{x} + (\dots) \hat{y} + (\dots) \hat{z}\\
-    \vec{A} \times (\vec{B} \times \vec{C})                            & =[A_y(B_x C_y - B_y C_x) - A_z(B_x C_z - B_z C_x)]\hat{x} + (\dots) \hat{y} + (\dots) \hat{z}\\
-    &= \underbrace{(A_y B_x C_y - A_y B_y C_x - A_z B_x C_z + A_z B_z C_x)}_{\text{x-component}}\hat{x} + (\dots) \hat{y} + (\dots) \hat{z}                                                                                                                                
+    \vec{A} \times (\vec{B} \times \vec{C})                            & =[A_y(B_x C_y - B_y C_x) - A_z(B_z C_x - B_x C_z)]\hat{x} + (\dots) \hat{y} + (\dots) \hat{z}\\
+    &= \underbrace{(A_y B_x C_y - A_y B_y C_x - A_z B_z C_x + A_z B_x C_z)}_{\text{x-component}}\hat{x} + (\dots) \hat{y} + (\dots) \hat{z}                                                                                                                                
 \end{align*}
+
+\section*{Problem 2}
+\begin{enumerate}
+    \item Prove \(\nabla \cdot (\nabla \times \vec{A}) = 0 \)
+\end{enumerate}
 \end{document}

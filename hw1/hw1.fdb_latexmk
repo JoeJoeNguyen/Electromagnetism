@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1738785070.21783 "/Users/joenguyen/Electromagnetism/hw1/hw1.tex" "hw1.pdf" "hw1" 1738785070.69421 0
-  "/Users/joenguyen/Electromagnetism/hw1/hw1.tex" 1738785069.97789 3764 cf864c46f9c61547a2102de42c61790a ""
+["pdflatex"] 1738788906.79468 "/Users/joenguyen/Electromagnetism/hw1/hw1.tex" "hw1.pdf" "hw1" 1738788907.20425 0
+  "/Users/joenguyen/Electromagnetism/hw1/hw1.tex" 1738788906.60277 3883 caed736f1fcf445d44e93fe1a1c53f39 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -48,8 +48,8 @@
   "/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1724715838.98567 5467645 128b85b7cde5f5edc5cb7f1dd7ff8736 ""
   "/usr/local/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1724715793 8221424 196b33575c66b0e4b7d97970a21d5891 ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
-  "hw1.aux" 1738785070.65415 32 044b7f8fc9779af7531264e0c5c84b6d "pdflatex"
-  "hw1.tex" 1738785069.97789 3764 cf864c46f9c61547a2102de42c61790a ""
+  "hw1.aux" 1738788907.16766 32 044b7f8fc9779af7531264e0c5c84b6d "pdflatex"
+  "hw1.tex" 1738788906.60277 3883 caed736f1fcf445d44e93fe1a1c53f39 ""
   (generated)
   "hw1.aux"
   "hw1.log"
