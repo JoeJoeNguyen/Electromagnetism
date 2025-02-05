@@ -16,4 +16,42 @@ I pledge my honor that I have abided by the Stevens Honor System.}
 \section*{Problem 1}
 Prove the identity \(\vec{A} \times (\vec{B} \times \vec{C}) = \vec{B} (\vec{A} \cdot \vec{C}) - \vec{C}  (\vec{A} \cdot \vec{B})\) \\ \\
 Left hand-side:
+\begin{align*}
+	\vec{B} \times \vec{C}                  & = (B_x \hat{x} + B_y \hat{y} + B_z \hat{z}) \times (C_x \hat{x} + C_y \hat{y} + C_z \hat{z}) \\
+	                                        & = \begin{vmatrix}
+		                                            \hat{x} & \hat{y} & \hat{z} \\
+		                                            B_x     & B_y     & B_z     \\
+		                                            C_x     & C_y     & C_z
+	                                            \end{vmatrix}                                                                \\ \\
+	                                        & = (B_y C_z - B_z C_y) \hat{x} + (B_x C_z - B_z C_x) \hat{y} + (B_x C_y - B_y C_x) \hat{z}    \\ \\
+	\vec{A} \times (\vec{B} \times \vec{C}) & =
+	\begin{vmatrix}
+		\hat{x}             & \hat{y}             & \hat{z}             \\
+		A_x                 & A_y                 & A_z                 \\
+		(B_y C_z - B_z C_y) & (B_x C_z - B_z C_x) & (B_x C_y - B_y C_x)
+	\end{vmatrix}                                                                        \\ \\
+	                                        & = [A_y(B_x C_y - B_y C_x) - A_z(B_x C_z - B_z C_x)] \hat{x} +                                \\
+	                                        & \quad [A_x(B_x C_y - B_y C_x) - A_z(B_y C_z - B_z C_y)] \hat{y} +                            \\
+	                                        & \quad [A_x(B_x C_z - B_z C_x) - A_y(B_y C_z - B_z C_y)] \hat{z}
+\end{align*}
+Right hand-side:
+\[\vec{A} \cdot \vec{C} = A_x C_x + A_y C_y + A_z C_z\]
+
+\begin{align*}
+	\vec{B} (\vec{A} \cdot \vec{C}) & = (B_x \hat{x} + B_y \hat{y} + B_z \hat{z}) \underbrace{(A_x C_x + A_y C_y + A_z C_z)}_{\text{scalar}} \\
+	                                & = (B_x A_x C_x + B_x A_y C_y + B_x A_z C_z )\hat{x} +                                                  \\
+	                                & = (B_y A_x C_x + B_y A_y C_y + B_y A_z C_z )\hat{y} +                                                  \\
+	                                & = (B_z A_x C_x + B_z A_y C_y + B_z A_z C_z )\hat{z}                                                    
+\end{align*}
+\begin{align*}
+	\vec{C} (\vec{A} \cdot \vec{B}) & = (C_x \hat{x} + C_y \hat{y} + C_z \hat{z}) (A_x B_x + A_y B_y + A_z B_z) \\
+	                                & = (C_x A_x B_x + C_x A_y B_y + C_x A_z B_z )\hat{x} +                     \\
+	                                & \quad (C_y A_x B_x + C_y A_y B_y + C_y A_z B_z )\hat{y} +                 \\
+	                                & \quad (C_z A_x B_x + C_z A_y B_y + C_z A_z B_z )\hat{z}                   
+\end{align*}
+\begin{align*}
+    \vec{B} (\vec{A} \cdot \vec{C}) - \vec{C} (\vec{A} \cdot \vec{B}) & = \underbrace{(B_x A_y C_y + B_x A_z C_z - C_x A_y B_y - C_x A_z B_z)}_{\text{x-component}}\hat{x} + (\dots) \hat{y} + (\dots) \hat{z}\\
+    \vec{A} \times (\vec{B} \times \vec{C})                            & =[A_y(B_x C_y - B_y C_x) - A_z(B_x C_z - B_z C_x)]\hat{x} + (\dots) \hat{y} + (\dots) \hat{z}\\
+    &= \underbrace{(A_y B_x C_y - A_y B_y C_x - A_z B_x C_z + A_z B_z C_x)}_{\text{x-component}}\hat{x} + (\dots) \hat{y} + (\dots) \hat{z}                                                                                                                                
+\end{align*}
 \end{document}
