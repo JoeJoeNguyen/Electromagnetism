@@ -23,7 +23,7 @@ Left hand-side:
 		                                            B_x     & B_y     & B_z     \\
 		                                            C_x     & C_y     & C_z
 	                                            \end{vmatrix}                                                                \\ \\
-	                                        & = (B_y C_z - B_z C_y) \hat{x} + (B_z C_x - B_x C_z ) \hat{y} + (B_x C_y - B_y C_x) \hat{z}    \\ \\
+	                                        & = (B_y C_z - B_z C_y) \hat{x} + (B_z C_x - B_x C_z ) \hat{y} + (B_x C_y - B_y C_x) \hat{z}   \\ \\
 	\vec{A} \times (\vec{B} \times \vec{C}) & =
 	\begin{vmatrix}
 		\hat{x}             & \hat{y}             & \hat{z}             \\
@@ -41,22 +41,120 @@ Right hand-side:
 	\vec{B} (\vec{A} \cdot \vec{C}) & = (B_x \hat{x} + B_y \hat{y} + B_z \hat{z}) \underbrace{(A_x C_x + A_y C_y + A_z C_z)}_{\text{scalar}} \\
 	                                & = (B_x A_x C_x + B_x A_y C_y + B_x A_z C_z )\hat{x} +                                                  \\
 	                                & = (B_y A_x C_x + B_y A_y C_y + B_y A_z C_z )\hat{y} +                                                  \\
-	                                & = (B_z A_x C_x + B_z A_y C_y + B_z A_z C_z )\hat{z}                                                    
+	                                & = (B_z A_x C_x + B_z A_y C_y + B_z A_z C_z )\hat{z}
 \end{align*}
 \begin{align*}
 	\vec{C} (\vec{A} \cdot \vec{B}) & = (C_x \hat{x} + C_y \hat{y} + C_z \hat{z}) (A_x B_x + A_y B_y + A_z B_z) \\
 	                                & = (C_x A_x B_x + C_x A_y B_y + C_x A_z B_z )\hat{x} +                     \\
 	                                & \quad (C_y A_x B_x + C_y A_y B_y + C_y A_z B_z )\hat{y} +                 \\
-	                                & \quad (C_z A_x B_x + C_z A_y B_y + C_z A_z B_z )\hat{z}                   
+	                                & \quad (C_z A_x B_x + C_z A_y B_y + C_z A_z B_z )\hat{z}
 \end{align*}
 \begin{align*}
-    \vec{B} (\vec{A} \cdot \vec{C}) - \vec{C} (\vec{A} \cdot \vec{B}) & = \underbrace{(B_x A_y C_y + B_x A_z C_z - C_x A_y B_y - C_x A_z B_z)}_{\text{x-component}}\hat{x} + (\dots) \hat{y} + (\dots) \hat{z}\\
-    \vec{A} \times (\vec{B} \times \vec{C})                            & =[A_y(B_x C_y - B_y C_x) - A_z(B_z C_x - B_x C_z)]\hat{x} + (\dots) \hat{y} + (\dots) \hat{z}\\
-    &= \underbrace{(A_y B_x C_y - A_y B_y C_x - A_z B_z C_x + A_z B_x C_z)}_{\text{x-component}}\hat{x} + (\dots) \hat{y} + (\dots) \hat{z}                                                                                                                                
+	\vec{B} (\vec{A} \cdot \vec{C}) - \vec{C} (\vec{A} \cdot \vec{B}) & = \underbrace{(B_x A_y C_y + B_x A_z C_z - C_x A_y B_y - C_x A_z B_z)}_{\text{x-component}}\hat{x} + (\dots) \hat{y} + (\dots) \hat{z} \\
+	\vec{A} \times (\vec{B} \times \vec{C})                           & =[A_y(B_x C_y - B_y C_x) - A_z(B_z C_x - B_x C_z)]\hat{x} + (\dots) \hat{y} + (\dots) \hat{z}                                          \\
+	                                                                  & = \underbrace{(A_y B_x C_y - A_y B_y C_x - A_z B_z C_x + A_z B_x C_z)}_{\text{x-component}}\hat{x} + (\dots) \hat{y} + (\dots) \hat{z}
 \end{align*}
 
 \section*{Problem 2}
 \begin{enumerate}
-    \item Prove \(\nabla \cdot (\nabla \times \vec{A}) = 0 \)
+	\item Prove \(\nabla \cdot (\nabla \times \vec{A}) = 0 \)
+	      \begin{align*}
+		      \nabla \times \vec{A} & = \begin{vmatrix}
+			                                \hat{x}                     & \hat{y}                     & \hat{z}                     \\
+			                                \frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z} \\
+			                                A_x                         & A_y                         & A_z
+		                                \end{vmatrix}                                                                                                                                                                                 \\
+		                            & = \left(\frac{\partial A_z}{\partial y} -\frac{\partial A_y}{\partial z}\right) \hat{x} - \left(\frac{\partial A_z}{\partial x} - \frac{\partial A_x}{\partial z}\right) \hat{y} + \left(\frac{\partial A_y}{\partial x} - \frac{\partial A_x}{\partial y}\right) \hat{z}
+	      \end{align*}
+	      \begin{align*}
+		       & \nabla \cdot (\nabla \times \vec{A})                                                                                                                                                                                                                                                          \\
+		       & = \left(\frac{\partial}{\partial x} \hat{x} + \frac{\partial}{\partial y}\hat{y} + \frac{\partial}{\partial z} \hat{z}\right) \cdot
+		      \left[\left(\frac{\partial A_z}{\partial y} -\frac{\partial A_y}{\partial z}\right) \hat{x} - \left(\frac{\partial A_z}{\partial x} - \frac{\partial A_x}{\partial z}\right) \hat{y} + \left(\frac{\partial A_y}{\partial x} - \frac{\partial A_x}{\partial y}\right) \hat{z}\right]             \\
+		       & = \frac{\partial^2 A_z}{\partial x \partial y} - \frac{\partial^2 A_y}{\partial x \partial z} - \frac{\partial^2 A_z}{\partial y \partial x} + \frac{\partial^2 A_x}{\partial y \partial z} + \frac{\partial^2 A_y}{\partial z \partial x} - \frac{\partial^2 A_x}{\partial z \partial y} = 0 \\
+	      \end{align*}
+	\item Prove \(\nabla \times \nabla \psi = 0 \)
+	      \begin{align*}
+		      \nabla \psi & = \frac{\partial \psi}{\partial x} \hat{x} + \frac{\partial \psi}{\partial y} \hat{y} + \frac{\partial \psi}{\partial z} \hat{z} \\
+	      \end{align*}
+	      \begin{align*}
+		      \nabla \times \nabla \psi & =
+		      \begin{vmatrix}
+			      \hat{x}                          & \hat{y}                          & \hat{z}                          \\
+			      \frac{\partial}{\partial x}      & \frac{\partial}{\partial y}      & \frac{\partial}{\partial z}      \\
+			      \frac{\partial \psi}{\partial x} & \frac{\partial \psi}{\partial y} & \frac{\partial \psi}{\partial z}
+		      \end{vmatrix}                                                                                                                                                                                                                                                                            \\
+		                                & = \left(\frac{\partial^2\psi}{\partial y \partial z} - \frac{\partial^2}{\partial z \partial y}\right)\hat{x} - \left(\frac{\partial^2\psi}{\partial x \partial z} - \frac{\partial^2\psi}{\partial z \partial x}\right)\hat{y} + \left(\frac{\partial^2\psi}{\partial x \partial y} - \frac{\partial^2\psi}{\partial y \partial x}\right)\hat{z} = 0
+	      \end{align*}
+\end{enumerate}
+\section*{Problem 3}
+\begin{enumerate}
+	\item \(f(x,y,z) = x^2 y^3 +z^4\)
+	      \begin{align*}
+		      \nabla f & = \frac{\partial f}{\partial x} \hat{x} + \frac{\partial f}{\partial y} \hat{y} + \frac{\partial f}{\partial z} \hat{z} \\
+		               & = 2xy^3 \hat{x} + 3x^2 y^2 \hat{y} + 4z^3 \hat{z}
+	      \end{align*}
+	\item \(\vec{v} = y^2 \hat{x} +(2xy + z^2) \hat{y} + 2yz \hat{z}\)
+	      \begin{align*}
+		      \nabla \cdot \vec{v} & = \left(\frac{\partial}{\partial x} \hat{x} + \frac{\partial}{\partial y}\hat{y} + \frac{\partial}{\partial z} \hat{z}\right) \cdot (y^2 \hat{x} +(2xy + z^2) \hat{y} + 2yz \hat{z}) \\
+		                           & = \frac{\partial y^2}{\partial x} + \frac{\partial (2xy + z^2)}{\partial y} + \frac{\partial 2yz}{\partial z}                                                                        \\
+		                           & = 0 + 2x + 2y = 2(x+y)
+	      \end{align*}
+	\item \(\vec{v} = x^2 \hat{x} + 3xz^2 \hat{y} - 2xz \hat{z}\)
+	      \begin{align*}
+		      \nabla \times \vec{v} & =
+		      \begin{vmatrix}
+			      \hat{x}                     & \hat{y}                     & \hat{z}                     \\
+			      \frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z} \\
+			      x^2                         & 3xz^2                       & -2xz
+		      \end{vmatrix}                                                                                                                                                                                                                     \\
+		                            & = \left(\frac{\partial (-2xz)}{\partial y} - \frac{\partial (3xz^2)}{\partial z}\right)\hat{x} - \left(\frac{\partial (-2xz)}{\partial x} - \frac{\partial x^2}{\partial z} \right)\hat{y} + \left(\frac{\partial 3xz^2}{\partial x}-\frac{\partial x^2}{\partial y} \right)\hat{z} \\
+		                            & = -6xz \hat{x} + 2x \hat{y} + 3z^2 \hat{z}
+	      \end{align*}
+\end{enumerate}
+\section*{Problem 4}
+\begin{enumerate}
+	\item Prove \(\nabla \cdot (f\vec{A}) = f(\nabla \cdot \vec{A}) + \vec{A} \cdot (\nabla f) \)
+	      \begin{align*}
+		      \nabla \cdot (f\vec{A}) & = \nabla \cdot (fA_x \hat{x} + fA_y \hat{y} + fA_z \hat{z})                                                                                                                                                                      \\
+		                              & = \frac{\partial}{\partial x} (fA_x) + \frac{\partial}{\partial y} (fA_y) + \frac{\partial}{\partial z} (fA_z)                                                                                                                   \\
+		                              & = \frac{\partial f}{\partial x} A_x + f \frac{\partial A_x}{\partial x} + \frac{\partial f}{\partial y} A_y + f \frac{\partial A_y}{\partial y} + \frac{\partial f}{\partial z} A_z + f \frac{\partial A_z}{\partial z}          \\
+		                              & = f \left(\frac{\partial A_x}{\partial x} + \frac{\partial A_y}{\partial y} + \frac{\partial A_z}{\partial z}\right) + A_x \frac{\partial f}{\partial x} + A_y \frac{\partial f}{\partial y} + A_z \frac{\partial f}{\partial z} \\
+		                              & = f(\nabla \cdot \vec{A}) + \vec{A} \cdot (\nabla f)
+	      \end{align*}
+	\item Prove \(\nabla \cdot (\vec{A} \times \vec{B}) = \vec{B} \cdot (\nabla \times \vec{A}) - \vec{A} \cdot (\nabla \times \vec{B})\)
+	      \begin{align*}
+		      \nabla \cdot (\vec{A} \times \vec{B}) & = \nabla \cdot
+		      \begin{vmatrix}
+			      \hat{x} & \hat{y} & \hat{z} \\
+			      A_x     & A_y     & A_z     \\
+			      B_x     & B_y     & B_z
+		      \end{vmatrix}                                                                                                                                                                                                                                                                                                                                                \\
+		                                            & = \nabla \cdot [(A_y B_z - A_z B_y) \hat{x} - (A_x B_z - A_z B_x) \hat{y} + (A_x B_y - A_y B_x) \hat{z}]                                                                                                                                                                                                                           \\
+		                                            & = \frac{\partial}{\partial x} (A_y B_z - A_z B_y) - \frac{\partial}{\partial y} (A_x B_z - A_z B_x) + \frac{\partial}{\partial z} (A_x B_y - A_y B_x)                                                                                                                                                                              \\
+		                                            & = \frac{\partial A_y}{\partial x} B_z + A_y \frac{\partial B_z}{\partial x} - \frac{\partial A_z}{\partial x} B_y - A_z \frac{\partial B_y}{\partial x} -                                                                                                                                                                          \\
+		                                            & \quad \frac{\partial A_x}{\partial y} B_z - A_x \frac{\partial B_z}{\partial y} + \frac{\partial A_z}{\partial y} B_x + A_z \frac{\partial B_x}{\partial y} +                                                                                                                                                                      \\
+		                                            & \quad\frac{\partial A_x}{\partial z} B_y + A_x \frac{\partial B_y}{\partial z} - \frac{\partial A_y}{\partial z} B_x - A_y \frac{\partial B_x}{\partial z}                                                                                                                                                                         \\
+		                                            & = \underbrace{B_z \left(\frac{\partial A_y}{\partial x} - \frac{\partial A_y}{\partial x}\right) + B_y \left(\frac{\partial A_x}{\partial z} - \frac{\partial A_z}{\partial x}\right) + B_x \left(\frac{\partial A_z}{\partial y} - \frac{\partial A_y}{\partial z}\right)}_{\vec{B} \cdot (\nabla \times \vec{A})} -              \\
+		                                            & \quad \underbrace{\left[A_x \left(\frac{\partial B_z}{\partial y} - \frac{\partial B_y}{\partial z}\right) + A_y \left(\frac{\partial B_x}{\partial z} - \frac{\partial B_z}{\partial x}\right) + A_z \left(\frac{\partial B_y}{\partial x} - \frac{\partial B_x}{\partial y}\right)\right]}_{\vec{A}\cdot(\nabla \times \vec{B})} \\
+	      \end{align*}
+	\item Prove \(\nabla \times (\vec{A}f) = f(\nabla \times \vec{A}) - \vec{A} \times \nabla f\)
+	      \begin{align*}
+		      \nabla \times (\vec{A}f) & = \nabla \times (A_x f \hat{x} + A_y f \hat{y} + A_z f \hat{z})                                                                                                                                                                                                                                                                                                \\
+		                               & = \begin{vmatrix}
+			                                   \hat{x}                     & \hat{y}                     & \hat{z}                     \\
+			                                   \frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z} \\
+			                                   A_x f                       & A_y f                       & A_z f
+		                                   \end{vmatrix}                                                                                                                                                                                                                                                                      \\
+		                               & = \left[\frac{\partial}{\partial y}\left(A_z f\right) - \frac{\partial}{\partial z}\left(A_y f\right)\right] \hat{x} - \left[\frac{\partial}{\partial x}\left(A_z f\right) - \frac{\partial}{\partial z}\left(A_x f\right)\right] \hat{y} + \left[\frac{\partial}{\partial x}\left(A_y f\right) - \frac{\partial}{\partial y}\left(A_x f\right)\right] \hat{z} \\
+		                               & = \left[\frac{\partial A_z}{\partial y} f + A_z \frac{\partial f}{\partial y} - \frac{\partial A_y}{\partial z} f - A_y \frac{\partial f}{\partial z}\right] \hat{x} -                                                                                                                                                                                         \\
+		                               & \quad \left[\frac{\partial A_z}{\partial x} f + A_z \frac{\partial f}{\partial x} - \frac{\partial A_x}{\partial z} f - A_x \frac{\partial f}{\partial z}\right] \hat{y} +                                                                                                                                                                                     \\
+		                               & \quad \left[\frac{\partial A_y}{\partial x} f + A_y \frac{\partial f}{\partial x} - \frac{\partial A_x}{\partial y} f - A_x \frac{\partial f}{\partial y}\right] \hat{z}                                                                                                                                                                                       \\
+		                               & = f \hat{x} \left(\frac{\partial A_z}{\partial y} - \frac{\partial A_y}{\partial z}\right) -\hat{x} \left(A_y \frac{\partial f}{\partial z} - A_z \frac{\partial f}{\partial y}\right) +                                                                                                                                                                       \\
+		                               & \quad - f \hat{y} \left(\frac{\partial A_z}{\partial x} - \frac{\partial A_x}{\partial z}\right) + \hat{y} \left(A_z \frac{\partial f}{\partial x} - A_x\frac{\partial f}{\partial z}\right) +                                                                                                                                                                 \\
+		                               & \quad f \hat{z} \left(\frac{\partial A_y}{\partial x} - \frac{\partial A_x}{\partial y}\right) - \hat{z} \left(A_x \frac{\partial f}{\partial y} - A_y \frac{\partial f}{\partial x}\right)                                                                                                                                                                    \\
+		                               & = f \underbrace{\left[\hat{x} \left(\frac{\partial A_z}{\partial y} - \frac{\partial A_y}{\partial z}\right) - \hat{y} \left(\frac{\partial A_z}{\partial x} - \frac{\partial A_x}{\partial z}\right) + \hat{z} \left(\frac{\partial A_y}{\partial x} - \frac{\partial A_x}{\partial y}\right)\right]}_{\nabla \times \vec{A}} -                               \\
+		                               & \quad \underbrace{\left[\hat{x} \left(A_y \frac{\partial f}{\partial z} - A_z \frac{\partial f}{\partial y}\right) - \hat{y} \left(A_z \frac{\partial f}{\partial x} - A_x\frac{\partial f}{\partial z}\right) + \hat{z} \left(A_x \frac{\partial f}{\partial y} - A_y \frac{\partial f}{\partial x}\right)\right]}_{\vec{A} \times \nabla f}                  \\
+		                               & = f(\nabla \times \vec{A}) - \vec{A} \times \nabla f
+	      \end{align*}
 \end{enumerate}
 \end{document}
