@@ -23,12 +23,93 @@ I pledge my honor that I have abided by the Stevens Honor System.}
 		      \text{Total}                & = \frac{1}{3} + 0 + 1 = \frac{4}{3}
 	      \end{align*}
 	\item \((0,0,0) \rightarrow (0,0,1) \rightarrow (0,1,1) \rightarrow (1,1,1)\)
-	\begin{align*}
-        (0,0,0) \rightarrow (0,0,1) & = \int_{(0,0,0)}^{(0,0,1)} \vec{v} \cdot dl = \int_{0}^{1} y^2 dz = 0 \quad (y = 0) \\
-        (0,0,1) \rightarrow (0,1,1) & = \int_{(0,0,1)}^{(0,1,1)} \vec{v} \cdot dl = \int_{0}^{1} 2yz dy = \int_{0}^{1} 2ydy = 1 \quad (z = 1) \\
-        (0,1,1) \rightarrow (1,1,1) & = \int_{(0,1,1)}^{(1,1,1)} \vec{v} \cdot dl = \int_{0}^{1} x^2 dx = \frac{1}{3}  \\
-        \text{Total}                & = 0 + 1 + \frac{1}{3} = \frac{4}{3}
-    \end{align*}
-    \item straight line from \((0,0,0)\) to \((1,1,1)\)
+	      \begin{align*}
+		      (0,0,0) \rightarrow (0,0,1) & = \int_{(0,0,0)}^{(0,0,1)} \vec{v} \cdot dl = \int_{0}^{1} y^2 dz = 0 \quad (y = 0)                     \\
+		      (0,0,1) \rightarrow (0,1,1) & = \int_{(0,0,1)}^{(0,1,1)} \vec{v} \cdot dl = \int_{0}^{1} 2yz dy = \int_{0}^{1} 2ydy = 1 \quad (z = 1) \\
+		      (0,1,1) \rightarrow (1,1,1) & = \int_{(0,1,1)}^{(1,1,1)} \vec{v} \cdot dl = \int_{0}^{1} x^2 dx = \frac{1}{3}                         \\
+		      \text{Total}                & = 0 + 1 + \frac{1}{3} = \frac{4}{3}
+	      \end{align*}
+	\item straight line from \((0,0,0)\) to \((1,1,1)\)
+	      Since it is a straight line, the function \(\vec{v}\) should be evaluated along a specific path parameterization \(l(t) = (t,t,t) \), this is because
+	      all the variables are dependent on each other.
+	      \[x = t, y = t, z = t, 0 \leq t \leq 1\]
+	      \[dx = dt, dy = dt, dz = dt\]
+	      \begin{align*}
+		      \int_{(0,0,0)}^{(1,1,1)} \vec{v}(l(t)) \cdot dl & = \int_{0}^{1} t^2 \cdot 1 dt + \int_{0}^{1} 2t^2 \cdot 1 dt \int_{0}^{1} t^2 \cdot 1 dt \\
+		                                                      & = \int_{0}^{1} t^2 + 2t^2 + t^2 dt = \int_{0}^{1} 4t^2 dt = \frac{4}{3}
+	      \end{align*}
 \end{itemize}
+\section*{Problem 2}
+\[T= z^2\]
+\[\int_{v}^{} T dt\]
+At first, in the \((x,y)\) coordinate, we have the line go from \((1,0,0) \rightarrow (0,1,0)\). The line can be written as \(y = 1 - x\). Therefore the bounds of the integral are:
+\[0 \leq x \leq 1, 0 \leq y \leq x - 1 \quad \text{(as \(x\) goes from \(0 \rightarrow 1\), \(y\) goes from \(0 \rightarrow (1-x)\))}\]
+For the plane going bounded by 3 poinnts \((1,0,0), (0,1,0), (0,0,1)\), the equation of the plane is \(x+y+z = 1\) or \
+\(z = 1 - x - y\). The bound of this integral is:
+\[0 \leq z \leq 1 - x - y \quad \text{(z goes from \(0 \rightarrow 1 - x - y\))}\]
+Therefore, the integral is:
+\begin{align*}
+	\int_{0}^{1} \int_{0}^{1-x} \int_{0}^{1-x-y} T dt & = \int_{0}^{1} \int_{0}^{1-x} \int_{0}^{1-x-y} z^2 dz dy dx                \\
+	                                                  & = \int_{0}^{1} \int_{0}^{1-x} \left[\frac{z^3}{3}\right]_{0}^{1-x-y} dy dx \\
+	                                                  & = \int_{0}^{1} \int_{0}^{1-x} \frac{(1-x-y)^3}{3} dy dx                    \\
+	                                                  & = \frac{1}{3} \int_{0}^{1} \int_{0}^{1-x} (1-x-y)^3 dy dx                  \\
+\end{align*}
+Substitute \( u = 1-x-y\) and \(du = -dy\). The new lower bound is \(u = 1-x\) and the upper bound is \(u = 1-x-(1-x) = 0\).
+\begin{align*}
+	\frac{-1}{3} \int_{0}^{1} \int_{1-x}^{0} u^3 du dx &= \frac{-1}{3} \int_{0}^{1} \left[\frac{u^4}{4}\right]_{1-x}^{0} dx \\
+	&= \frac{-1}{3} \int_{0}^{1} \frac{-(x-1)^4}{4} dx \\
+	&= \frac{1}{12} \int_{0}^{1} (x-1)^4 dx \\
+	&= \frac{1}{12} \left[\frac{(x-1)^5}{5}\right]_{0}^{1} \\
+	&= \frac{1}{60}
+\end{align*}
+\section*{Problem 3}
+\[\vec{v} = (xy) \hat{x} + (2yz)\hat{y} + (3xz) \hat{z}\]
+Divergence theorem states that:
+\[\int_{v}^{}(\nabla \cdot v)d\tau = \int_{s}^{} v\cdot da \]
+\begin{align*}
+	\int_{v}^{}\nabla \cdot \vec{v} d\tau & = \int_{0}^{2} \int_{0}^{2} \int_{0}^{2} \left[\frac{\partial(xy)}{\partial x} + \frac{\partial(2yz)}{\partial y} + \frac{\partial (3xz)}{\partial z}\right] dx dy dz \\
+	&= \int_{0}^{2} \int_{0}^{2} \int_{0}^{2} (y + 2z + 3x) dx dy dz \\
+	&= \int_{0}^{2} \int_{0}^{2} \left[yx + 2zx + \frac{3x^2}{2}\right]_{0}^{2} dy dz \\
+	&= \int_{0}^{2} \int_{0}^{2} (2y + 4z + 6) dy dz \\
+	&= \int_{0}^{2} \left[y^2 + 4yz + 6y\right]_{0}^{2} dz \\
+	&= \int_{0}^{2} (4 + 8z + 12) dz \\
+	&= \left[4z + 4z^2 + 12z\right]_{0}^{2} \\
+	&= 8 + 16 + 24 = 48
+\end{align*}
+For the surface integral, we have 6 faces. 2 top and bottom faces on the (xy plane with z = 0 and z = 2), 2 faces on the xz plane (y = 0 and y = 2), and 2 faces on the yz plane (x = 0 and x = 2). 
+\begin{align*}
+	\int_{s}^{} v\cdot da &= \int_{0}^{2} \int_{0}^{2} v_{z=2} dx dy - \int_{0}^{2} \int_{0}^{2} v_{z=0} dx dy  + \int_{0}^{2} \int_{0}^{2} v_{x=2} dz dy - \int_{0}^{2} \int_{0}^{2} v_{x=0} dz dy \\
+	& +\int_{0}^{2} \int_{0}^{2} v_{y=2} dz dx - \int_{0}^{2} \int_{0}^{2} v_{y=0} dz dx \\
+	&= \int_{0}^{2} \int_{0}^{2} 6x dx dy - \int_{0}^{2} \int_{0}^{2} 0 dx dy  + \int_{0}^{2} \int_{0}^{2} 2y dy dz - \int_{0}^{2} \int_{0}^{2} 0 dz dy \\
+	& +\int_{0}^{2} \int_{0}^{2} 4z dx dz - \int_{0}^{2} \int_{0}^{2}0 dx dz \\
+	&= \int_{0}^{2} \int_{0}^{2} 6x dx dy + \int_{0}^{2} \int_{0}^{2} 2y dy dz + \int_{0}^{2} \int_{0}^{2} 4z dx dz \\
+	&= \int_{0}^{2} \left[3x^2\right]_{0}^{2} dy + \int_{0}^{2} \left[y^2\right]_{0}^{2} dz + \int_{0}^{2} \left[2z^2\right]_{0}^{2} dx \\
+	&= \int_{0}^{2} 12 dy + \int_{0}^{2} 4 dz + \int_{0}^{2} 8 dx \\
+	&= \left[12y\right]_{0}^{2} + \left[4z\right]_{0}^{2} + \left[8x\right]_{0}^{2} \\
+	&= 24 + 8 + 16 = 48
+\end{align*}
+Therefore, the two integrals are equal.
+\section*{Problem 4}
+\[\int_{S}^{} (\nabla \times v) \cdot da = \oint_P v \cdot dl\]
+Since we only include the (yz) plane.
+\begin{align*}
+	\int_{S}^{} (\nabla \times v) \cdot dydz &= \int_{0}^{2} \int_{0}^{2-z} \begin{vmatrix}
+		\hat{x} & \hat{y} & \hat{z} \\
+		\frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z} \\
+		xy & 2yz & 3xz
+	\end{vmatrix} dy dz \\
+	&= \int_{0}^{2} \int_{0}^{2-z} \begin{vmatrix}
+		\hat{x} & 0 & 0 \\
+		\frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z} \\
+		xy & 2yz & 3xz
+	\end{vmatrix} dy dz \quad (\text{since we only include the (yz) plane}) \\
+	&= \int_{0}^{2} \int_{0}^{2-z} \left[\frac{\partial(3xz)}{\partial y} - \frac{\partial(2yz)}{\partial z}\right] dy dz \\
+	&= \int_{0}^{2} \int_{0}^{2-z} 0 - 2y dy dz \\
+	&= \int_{0}^{2} \left[-y^2\right]_{0}^{2-z} dz \\
+	&= \int_{0}^{2} -(2-z)^2 dz \\
+	&= - \int_{0}^{2} 4 - 4z + z^2 dz \\
+	&= - \left[4z - 2z^2 + \frac{z^3}{3}\right]_{0}^{2} \\
+	&= -8 + 8 - \frac{8}{3} = -\frac{8}{3}
+\end{align*}
+
 \end{document}
