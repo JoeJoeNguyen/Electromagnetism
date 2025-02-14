@@ -112,4 +112,43 @@ Since we only include the (yz) plane.
 	&= -8 + 8 - \frac{8}{3} = -\frac{8}{3}
 \end{align*}
 
+Let line \(l1\) be the staright like from \((0,0,2) \rightarrow (0,0,0)\), line \(l2\) be the straight line from \((0,0,0) \rightarrow (0,2,0)\), 
+and line \(l3\) be the straight line from \((0,2,0) \rightarrow (0,0,2)\). We can parameterized the lines as:
+\begin{align*}
+	l1(t) &= (0,0,2-t) \quad 0 \leq t \leq 2 \\
+	l2(t) &= (0,t,0) \quad 0 \leq t \leq 2 \\
+	l3(t) &= (0,2-t,t) \quad 0 \leq t \leq 2
+\end{align*}
+
+\begin{align*}
+	\oint_P v \cdot dl &= \int_{0}^{2} v(l1(t)) \cdot dl1(t) + \int_{0}^{2} v(l2(t)) \cdot dl2(t) + \int_{0}^{2} v(l3(t)) \cdot dl3(t) \\
+	&= \int_{0}^{2} v(0,0,2-t) \cdot (0,0,-1) dt + \int_{0}^{2} v(0,t,0) \cdot (0,1,0) dt + \int_{0}^{2} v(0,2-t,t) \cdot (0,-1,1) dt \\
+	&= \int_{0}^{2} -3(2-t)\cdot 0 dt \int_{0}^{2} 2(t)(0) dt + \int_{0}^{2} 2(t)(-1)(2-t) + 3(t)(0)dt \\
+	&= 0 + 0 + \int_{0}^{2} -2t(2-t) dt \\
+	&= \int_{0}^{2} -4t + 2t^2 dt \\
+	&= \left[-2t^2 + \frac{2t^3}{3}\right]_{0}^{2} \\
+	&= -8 + \frac{16}{3} = -\frac{8}{3}
+\end{align*}
+Therefore, the two integrals are equal.
+\section*{Problem 5}
+Prove:
+\begin{itemize}
+	\item \(\int_{S}^{} f(\nabla \times \vec{A}) \cdot d\vec{a} = \int_{S}^{} [\vec{A} \times (\nabla f)]\cdot d\vec{a} + \oint_P f\vec{A} \cdot d\vec{l}\)\\
+	\\
+	Left hand side: \\
+	From equation (v) page 21, we have: \(\nabla \times (fA) = f(\nabla \times A) - A \times (\nabla f)\)\\
+	\begin{align*}
+		\int_{S}^{} f(\nabla \times \vec{A}) \cdot d\vec{a} &= \int_{S}^{} [\underbrace{\nabla \times (f\vec{A})}_{\text{Stoke's theorem}} + \vec{A} \times (\nabla f)] \cdot d\vec{a} \\
+		&=  \int_{S}^{} [\vec{A} \times (\nabla f)]\cdot d\vec{a} + \oint_P f\vec{A} \cdot d\vec{l}
+	\end{align*}
+	
+	\item \(\int_{V}^{}\vec{B} \cdot (\nabla \times \vec{A}) d\tau = \int_{V}^{}\vec{A}\cdot(\nabla \times \vec{B}) d\tau + \oint_S (\vec{A} \times \vec{B}) \cdot d\vec{a}\)
+	\\ \\
+	Left hand side: \\
+	From equation (iv) page 21, we have: \(\nabla \cdot (A\times B) = B \cdot (\nabla \times A) - A \cdot (\nabla \times B)\)
+	\begin{align*}
+		\int_{V}^{}\vec{B} \cdot (\nabla \times \vec{A}) d\tau &= \int_{V}^{}[\underbrace{\nabla \cdot (\vec{A} \times \vec{B})}_{\text{Divergence Theorem}} + \vec{A} \cdot (\nabla \times \vec{B})] d\tau \\
+		&= \int_{V}^{}\vec{A}\cdot(\nabla \times \vec{B}) d\tau + \oint_S(\vec{A} \times \vec{B}) \cdot d\vec{a}
+	\end{align*}
+\end{itemize}
 \end{document}
